@@ -20,4 +20,17 @@ after_success:
   - docker push dbaker7532/multi-nginx
   - docker push dbaker7532/multi-server
   - docker push dbaker7532/multi-worker
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  environment: MuldiDocker-evn
+  bucket_name: elasticbeanstalk-us-east-2-047614345379
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY

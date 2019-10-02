@@ -24,7 +24,7 @@
         },
         {
             "name": "nginx",
-            "image": "dbaker7532/nginx",
+            "image": "dbaker7532/multi-nginx",
             "hostname": "nginx",
             "essential": true,
             "portMappings": [
